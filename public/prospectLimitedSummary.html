@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AIMaaS - Prospect</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://bootswatch.com/yeti/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <nav>
+          <h1>AIMaaS</h1>
+        </nav>
+      </div>
+      <hr>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-12 col-lg-12 col-xl-12 col-xs-12 col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h1 class="card-title">Prospect Details</h1>
+            </div>
+            <div class="card-block">
+              <p class="card-text">
+                <div class="row">
+                  <div class="col-3">
+                    <h4 class="card-title">Prospect Name: Pepsi</h4>
+                  </div>
+                  <div class="col-3">
+                    <h4 class="card-title">Spend Amount: $400</h4>
+                  </div>
+                  <div class="col-3">
+                    <h4 class="card-title">PO Count: 400</h4>
+                  </div>
+                  <div class="col-3">
+                    <h4 class="card-title">Invoice Count: 400</h4>
+                  </div>
+                </div>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-12 col-lg-12 col-xl-12 col-xs-12 col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h1 class="card-title">Quick Win: 40 suppliers already on network</h1>
+            </div>
+            <div class="card-block">
+              <table>
+                <tr>
+                  <td class="col-4"><canvas id="myChart"></canvas>
+                  </td>
+                  <td class="col-4"><canvas id="myChart2"></canvas></td>
+                </tr>
+              </table>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Important", "Quick Win", "Medium", "Small"],
+        datasets: [{
+            label: '# of Supplier',
+            data: [12, 40, 3, 5],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+
+<script>
+var ctx = document.getElementById("myChart2").getContext('2d');
+var myChart = new Chart(ctx, {
+type: 'bar',
+data: {
+labels: ["Important", "Quick Win", "Medium", "Small"],
+datasets: [{
+label: 'Spend Amount',
+data: [12, 40, 3, 5],
+backgroundColor: [
+  'rgba(255, 99, 132, 0.2)',
+  'rgba(54, 162, 235, 0.2)',
+  'rgba(255, 206, 86, 0.2)',
+  'rgba(75, 192, 192, 0.2)',
+  'rgba(153, 102, 255, 0.2)',
+  'rgba(255, 159, 64, 0.2)'
+],
+borderColor: [
+  'rgba(255,99,132,1)',
+  'rgba(54, 162, 235, 1)',
+  'rgba(255, 206, 86, 1)',
+  'rgba(75, 192, 192, 1)',
+  'rgba(153, 102, 255, 1)',
+  'rgba(255, 159, 64, 1)'
+],
+borderWidth: 1
+}]
+},
+options: {
+scales: {
+yAxes: [{
+  ticks: {
+      beginAtZero:true
+  }
+}]
+}
+}
+});
+</script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-12 col-lg-12 col-xl-12 col-xs-12 col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h1 class="card-title">64% critical suppliers already on network. $0.6million ach ievable via Ariba</h1>
+            </div>
+            <div class="card-block">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </body>
+</html>
