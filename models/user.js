@@ -5,7 +5,7 @@ var user = {
                     return db.query('select * from userCreds', callback);
           },
           getUserById: function(id, callback) {
-                    return db.query('select * from userCreds where userId=?',[ id], callback);
+                    return db.query('select * from userCreds where userId=?',[id], callback);
           },
           addUser: function(user, callback) {
                     return db.query('insert into userCreds values(?,?)', [user.userId], [user.password], callback);

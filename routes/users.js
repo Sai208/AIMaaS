@@ -21,14 +21,6 @@ router.get('/:id?', (req, res, next)=>{
       }
     });
   }
-  // pool.query('Select * from userCreds',(err, rows, next)=>{
-  //   if(err) {
-  //     res.json(err);
-  //   } else {
-  //     res.json(rows);
-  //   }
-  // });
-  // res.send('respond with a resource');
 });
 
 router.post('/', (req, res, next)=>{
