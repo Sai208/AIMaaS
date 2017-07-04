@@ -1,4 +1,4 @@
-var db = require('../dbconnection');
+var db = require('../db/dbconnection');
 var select = require('../selectQuery');
 var insertQueryPart = 'insert into prospects(name, accountType, industry) values(?,?,?)';
 var fromQueryPart = ' from prospects';

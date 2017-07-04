@@ -1,4 +1,4 @@
-var db = require('../dbconnection');
+var db = require('../db/dbconnection');
 var selectAllQueryPart = "select *";
 var selectQueryPart = "select ";
 var fromQueryPart = " from industry_meta_data";

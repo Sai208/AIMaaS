@@ -4,13 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var cmd = require('node-cmd');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
-const port = 3000;
+const port = 4000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -51,6 +52,11 @@ app.use(function(err, req, res, next) {
 
 app.listen(port,()=>{
   console.log('Server started at port '+port);
+  console.log('Running R Script');
+  cmd.get('Rscript ./R/helloWorld.r',
+  function(err,data,stderr) {
+    console.log('The r script returned:',data);
+  })
 });
 
 module.exports = app;

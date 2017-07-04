@@ -1,0 +1,9 @@
+/* using the font size Raleway.
+We have the following sizes there:
+Regular -400px
+and
+Medium italic - 500px
+You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Raleway', sans-serif;
+}

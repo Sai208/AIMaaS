@@ -1,17 +1,20 @@
-var db = require('../dbconnection');
-var fromQuery = " from accountType";
-var fromWhereQuery = " from accountType where type=?";
-var selectAllQuery = "select *";
-var selectTypeQuery = "select type";
-var insertQuery = "insert into accountType values(?)";
-var deleteQuery = "delete from accountType where type=?";
+var db = require('../db/dbconnection');
+
+const query = require('../db/queryPart');
+const tables  = require('../db/tables');
+
+const table = tables.accountTypesTable;
+var selectQuery = query.selectAllQueryPart + query.fromPart + table.name + query.wherePart + table.columns.typeColumn +"=?";
+var selectAllQuery = query.selectAllQueryPart + query.fromPart + table.name;
+var insertQuery = query.insertPart + table.name + query.values1Part;
+var deleteQuery = query.deletePart + table.name + query.wherePart + table.columns.typeColumn +"=?";
 
 var accountType = {
           getAllAccountType: function(callback)   {
-                    return db.query(selectAllQuery + fromQuery, callback);
+                    return db.query(selectAllQuery, callback);
           },
           getAccountType: function(type, callback)          {
-                    return db.query(selectTypeQuery + fromWhereQuery, [type], callback);
+                    return db.query(selectQuery, [type], callback);
           },
           addAccountType: function(type, callback)          {
                     return db.query(insertQuery, [type], callback);

@@ -1,4 +1,4 @@
-var db = require('../dbconnection');
+var db = require('../db/dbconnection');
 var select = require('../selectQuery.js');
 var fromQueryPart = ' from prospect_savings';
 var whereQueryPart = ' where prospectId=?';
