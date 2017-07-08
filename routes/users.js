@@ -3,24 +3,15 @@ var router = express.Router();
 var user=  require('../models/user');
 
 /* GET users listing. */
-router.get('/:id?', (req, res, next)=>{
-  if(req.params.id) {
-    user.getUserById(req.params.id, (err, rows)=>{
-      if(err) {
-        res.json(err);
-      } else {
-        res.json(rows);
-      }
-    });
-  } else {
-    user.getAllUsers((err, rows)=>{
-      if(err) {
-        res.json(err);
-      } else {
-        res.json(rows);
-      }
-    });
-  }
+router.post('/authenticate', (req, res) => {
+  user.count({
+    where: {
+      userId: req.body.userId.toString(),
+      password: req.body.password.toString()
+    }
+  }).then(count => {
+    res.json(count);
+  })
 });
 
 router.post('/', (req, res, next)=>{
@@ -39,16 +30,6 @@ router.delete('/:id', (req, res, next)=>{
       res.send(err);
     } else {
       res.json(count);
-    }
-  });
-});
-
-router.put('/:id', (req, res, next)=>{
-  user.updateUser(req.params.id, req.body, (err, rows)=>{
-    if(err) {
-      res.send(err);
-    } else {
-      res.json(rows);
     }
   });
 });

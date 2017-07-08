@@ -1,11 +1,14 @@
-var db = require('../db/dbconnection');
-var select = require('../selectQuery');
-var fromQueryPart = ' from prospect_supplier_industry';
+const Sequelize = require('sequelize');
+const db = require('../db/dbconnection');
 
-var prospect_supplier_industry = {
-          getAllSupplierIndustry: function(callback)        {
-                    return db.query(select.selectAllQueryPart + fromQueryPart, callback);
+const prospect_supplier_industry = db.define('prospect_supplier_industry', {
+          Supplier_Name: {
+                    type: Sequelize.TEXT,
+                    primaryKey: true
+          },
+          Capiq_Industry: {
+                    type: Sequelize.TEXT
           }
-};
+})
 
 module.exports = prospect_supplier_industry;

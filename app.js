@@ -53,7 +53,7 @@ app.use(function(err, req, res, next) {
 app.listen(port,()=>{
   console.log('Server started at port '+port);
   console.log('Running R Script');
-  cmd.get('Rscript ./R/helloWorld.r',
+  cmd.get('Rscript ./R/helloWorld.r Vivek',
   function(err,data,stderr) {
     console.log('The r script returned:',data);
   })

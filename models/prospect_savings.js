@@ -1,15 +1,28 @@
-var db = require('../db/dbconnection');
-var select = require('../selectQuery.js');
-var fromQueryPart = ' from prospect_savings';
-var whereQueryPart = ' where prospectId=?';
+const Sequelize = require('sequelize');
+const db = require('../db/dbconnection');
 
-var prospect_savings = {
-          getAllProspectSavings: function(callback)         {
-                    return db.query(select.selectAllQueryPart + fromQueryPart, callback);
+const prospect_savings = db.define('prospect_savings', {
+          Prospect_ID: {
+                    type: Sequelize.INTEGER,
+                    primaryKey: true
+                    // add foreign key reference
           },
-          getProsectSavings: function(id, callback)         {
-                    return db.query(select.selectAllQueryPart + fromQueryPart + whereQueryPart, [id], callback);
+          Enablment_Strategy: {
+                    type: Sequelize.STRING
+                    //add foreign key reference
+          },
+          Supplier_Invoice_Savings_M: {
+                    type: Sequelize.FLOAT(16,2)
+          },
+          Invoice_Error_Reductions_Savings_M: {
+                    type: Sequelize.FLOAT(16,2)
+          },
+          PO_Requisistion_Transmission_Savings_M: {
+                    type: Sequelize.FLOAT(16,2)
+          },
+          Invoice_Receipt_Processing_Savings_M: {
+                    type: Sequelize.FLOAT(16,2)
           }
-};
+})
 
 module.exports = prospect_savings;
