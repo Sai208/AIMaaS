@@ -8,6 +8,9 @@ const User = db.define('usercreds', {
           },
           password: {
                     type: Sequelize.STRING
+          },
+          userType: {
+                    type: Sequelize.ENUM('SALES', 'SMO')
           }
 });
 

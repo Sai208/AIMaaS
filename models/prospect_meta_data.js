@@ -4,7 +4,8 @@ const db = require('../db/dbconnection');
 const prospect_meta_data = db.define('prospect_meta_data', {
           Prospect_ID: {
                     type: Sequelize.STRING,
-                    primaryKey: true
+                    primaryKey: true,
+                    autoIncrement: true
           },
           ProspectName: {
                     type: Sequelize.STRING
