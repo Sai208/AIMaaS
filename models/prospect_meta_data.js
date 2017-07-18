@@ -7,7 +7,7 @@ const prospect_meta_data = db.define('prospect_meta_data', {
                     primaryKey: true,
                     autoIncrement: true
           },
-          ProspectName: {
+          Prospect_Name: {
                     type: Sequelize.STRING
           },
           Version: {
