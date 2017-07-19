@@ -1,38 +1,25 @@
-var db = require('../db/dbconnection');
-var selectAllQueryPart = "select *";
-var selectQueryPart = "select ";
-var fromQueryPart = " from industry_meta_data";
-var whereQueryPart = " where prospect_industry=?";
-var criticalIndustry = "critical_industries";
-var supplierCompliance = "supplier_compliance_multiplier";
-var invoiceError = "invoice_error_multiplier";
-var poReqTrans = "po_req_and_trans_multiplier";
-var invoiceReceipt = "invoice_receipt_multiplier";
+const Sequelize = require('sequelize');
+const db = require('../db/dbconnection');
 
-var industry_meta_data = {
-          getAllMetaData: function(callback)      {
-                    return db.query(selectAllQueryPart + fromQueryPart, callback);
+const industry_meta_data = db.define('industry_meta_data', {
+          Prospect_Industry: {
+                    type: Sequelize.TEXT,
+                    primaryKey: true
           },
-          getProspectIndustryMetaData: function(id, callback)         {
-                    return db.query(selectAllQueryPart + fromQueryPart + whereQueryPart, [id], callback);
+          Critical_Industries: {
+                    type: Sequelize.TEXT
           },
-          getCriticalIndustry: function(id, callback)       {
-                    var result = db.query(selectQueryPart + criticalIndustry + fromQueryPart + whereQueryPart, [id], callback);
-                    var array = result.split(',');
-                    return JSON.stringify(array);
+          Supplier_Compliance_Multiplier: {
+                    type: Sequelize.FLOAT(10,6)
           },
-          getSupplierComplianceMultiplier: function(id, callback)     {
-                    return db.query(selectQueryPart + supplierCompliance + fromQueryPart + whereQueryPart, [id], callback);
+          Invoice_Error_Multiplier: {
+                    type: Sequelize.FLOAT(10,6)
           },
-          getInvoiceErrorMultiplier: function(id, callback) {
-                    return db.query(selectQueryPart + invoiceError + fromQueryPart + whereQueryPart, [id], callback);
+          PO_Req_and_Trans_Multiplier: {
+                    type: Sequelize.FLOAT(10,6)
           },
-          getPOReqAndTransMultiplier: function(id, callback)          {
-                    return db.query(selectQueryPart + poReqTrans + fromQueryPart + whereQueryPart, [id], callback);
-          },
-          getInvoiceReceiptMultiplier: function(id, callback)         {
-                    return db.query(selectQueryPart + invoiceReceipt + fromQueryPart + whereQueryPart, [id], callback);
+          Invoice_Receipt_Multiplier: {
+                    type: Sequelize.FLOAT(10,6)
           }
-};
-
+})
 module.exports = industry_meta_data;

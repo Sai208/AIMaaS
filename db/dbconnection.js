@@ -1,12 +1,21 @@
-var express = require('express');
-var mysql  = require('mysql');
-
-var pool = mysql.createPool({
-          connectionLimit:    100,
-          host:     'localhost',
-          user:     'root',
-          password: 'root',
-          database: 'nodeTut'
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('nodetut', 'root', 'root', {
+          host: 'localhost',
+          dialect: 'mysql',
+          pool: {
+                    max: 1000,
+                    min: 1,
+                    idle: 1000
+          },
+          define: {
+                    timestamps: false
+          }
 });
 
-module.exports = pool;
+sequelize.authenticate().then(()=>{
+          console.log('Connection has been established successfully');
+}).catch(err => {
+          console.log('Unable to connect to the database:', err);
+});
+
+module.exports = sequelize;

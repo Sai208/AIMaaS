@@ -1,15 +1,21 @@
-var db = require('../db/dbconnection');
-var select = require('../selectQuery');
-var fromQueryPart = ' from prospect_spend_limited';
-var whereQueryPart = ' where prospectId=?';
+const Sequelize = require('sequelize');
+const db = require('../db/dbconnection');
 
-var prospect_spend_limited = {
-          getAllProspects: function(callback)     {
-                    return db.query(select.selectAllQueryPart + fromQueryPart, callback);
+const prospect_spend_limited = db.define('prospect_spend_limited', {
+          Prospect_ID: {
+                    type: Sequelize.INTEGER,
+                    primaryKey: true
+                    // add foreign key
           },
-          getProspect: function(id, callback)     {
-                    return db.query(select.selectAllQueryPart + fromQueryPart + whereQueryPart, [id], callback);
+          Spend_USD: {
+                    type: Sequelize.FLOAT(16,2)
+          },
+          PO_Count: {
+                    type: Sequelize.INTEGER
+          },
+          Invoice_Count: {
+                    type: Sequelize.INTEGER
           }
-};
+});
 
 module.exports = prospect_spend_limited;
