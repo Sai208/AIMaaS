@@ -8,6 +8,8 @@ var cmd = require('node-cmd');
 
 var users = require('./routes/users');
 var prospectMeta = require('./routes/prosect_meta_data_route');
+var prospectSpend = require('./routes/prospect_spend_route');
+var prospectSpendSummary = require('./routes/prospect_spend_summary_route');
 
 var app = express();
 
@@ -31,6 +33,8 @@ app.use(express.static(path.join(__dirname, 'client')));
 
 app.use('/users', users);
 app.use('/prospectsMeta', prospectMeta);
+app.use('/prospectSpend', prospectSpend);
+app.use('/prospectSpendSummary', prospectSpendSummary);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

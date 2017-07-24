@@ -1,12 +1,12 @@
 const Sequelize = require('sequelize');
 const db = require('../db/dbconnection');
 
-const prospects_spend = db.define('prospects_spend', {
+const prospect_spend = db.define('prospect_spend', {
           Prospect_ID: {
                     type: Sequelize.INTEGER,
                     primaryKey: true
           },
-          Prospect_SupplierName: {
+          Prospect_Supplier_Name: {
                     type: Sequelize.TEXT,
                     primaryKey: true
           },
@@ -34,4 +34,4 @@ const prospects_spend = db.define('prospects_spend', {
           }
 })
 
-module.exports = prospects_spend;
+module.exports = prospect_spend;
