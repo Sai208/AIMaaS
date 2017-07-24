@@ -1,0 +1,64 @@
+<app-header></app-header>
+<md-card style="margin-top: 1rem;">
+  <md-card-title><h2>Consumer Discretionary</h2></md-card-title>
+  <hr>
+  <md-card-content>
+    <md-grid-list cols="3" rowHeight="10:1">
+      <md-grid-tile><h1>Pepsi</h1></md-grid-tile>
+      <md-grid-tile><h1>Consumer Staples</h1></md-grid-tile>
+      <md-grid-tile><h1>PRO Subscription</h1></md-grid-tile>
+    </md-grid-list>
+  </md-card-content>
+</md-card>
+<md-card style="margin-top: 1rem;">
+  <md-tab-group>
+    <md-tab label="Trends">
+      <md-toolbar>
+        <h3>Quick Win: 687 suppliers already on network</h3>
+      </md-toolbar>
+      <md-card-content>
+        <md-grid-list cols="1" rowHeight="9:1">
+          <div style="display: block">
+            <chart id="canvas" #mixedChart
+            [type]="type"
+            [data]="data"
+            [options]="options">
+          </chart>
+          </div>
+
+            <!-- <div style="display: block">
+              <canvas baseChart
+                [datasets]="mixedChartData"
+                [labels]="radarChartLabels"
+                [chartType]="radarChartType"
+                style="max-height: 50rem; max-width: 50rem">
+              </canvas>
+            </div> -->
+
+        </md-grid-list>
+      </md-card-content>
+    </md-tab>
+    <md-tab label="Critical Supplier Dossier">
+      <!--  -->
+    </md-tab>
+    <md-tab label="Savings Potential">
+      <md-toolbar>
+        <h3>Critical Supplier: 135 suppliers already on network</h3>
+      </md-toolbar>
+      <md-card-content>
+        <md-grid-list cols="1" rowHeight="1:1">
+          <div style="display: block">
+            <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType"
+              style="max-height:50rem">
+            </canvas>
+          </div>
+        </md-grid-list>
+      </md-card-content>
+    </md-tab>
+  </md-tab-group>
+</md-card>

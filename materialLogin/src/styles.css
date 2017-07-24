@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* .container {
+          margin-left: 24.99%;
+          margin-right: 24.99%;
+          max-width: 51.02%;
+} */
+
+body {
+           font-family: 'Roboto', sans-serif;  
+}
+
+.sapBlue {
+          background-color: #6fa0ed;
+          color: white;
+}

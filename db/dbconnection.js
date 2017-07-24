@@ -8,7 +8,8 @@ const sequelize = new Sequelize('nodetut', 'root', 'root', {
                     idle: 1000
           },
           define: {
-                    timestamps: false
+                    timestamps: false,
+                    freezeTableName: true
           }
 });
 

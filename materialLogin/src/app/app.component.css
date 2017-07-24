@@ -1,0 +1,16 @@
+.loginCard {
+          margin-top: 15rem;
+          margin-left: 33.32%;
+          max-width: 33.32%;
+}
+
+.full-width {
+          width: 100%;
+}
+
+.loginButton {
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+}
