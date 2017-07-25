@@ -24,8 +24,8 @@ DROP TABLE IF EXISTS `tasks`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tasks` (
   `Prospect_ID` int(11) NOT NULL,
-  `Task_Name` varchar(1000) DEFAULT NULL,
-  `Task_Desc` varchar(1000) DEFAULT NULL,
+  `Task_Name` varchar(255) DEFAULT NULL,
+  `Task_Desc` varchar(255) DEFAULT NULL,
   `isDone` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`Prospect_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

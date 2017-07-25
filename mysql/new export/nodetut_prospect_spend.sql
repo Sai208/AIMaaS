@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `prospect_spend`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospect_spend` (
   `Prospect_ID` int(11) NOT NULL,
-  `Prospect_Supplier_Name` varchar(1000) NOT NULL,
+  `Prospect_Supplier_Name` varchar(255) NOT NULL,
   `Capiq_Industry` varchar(255) DEFAULT NULL,
   `Spend_USD` float(16,2) DEFAULT NULL,
   `PO_Count` int(11) DEFAULT NULL,

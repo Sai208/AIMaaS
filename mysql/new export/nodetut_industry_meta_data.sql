@@ -23,8 +23,8 @@ DROP TABLE IF EXISTS `industry_meta_data`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `industry_meta_data` (
-  `Prospect_Industry` varchar(1000) NOT NULL,
-  `Critical_Industries` varchar(1000) DEFAULT NULL,
+  `Prospect_Industry` varchar(255) NOT NULL,
+  `Critical_Industries` varchar(255) DEFAULT NULL,
   `Supplier_Compliance_Multiplier` float(10,6) DEFAULT NULL,
   `Invoice_Error_Multiplier` float(10,6) DEFAULT NULL,
   `PO_Req_and_Trans_Multiplier` float(10,6) DEFAULT NULL,
