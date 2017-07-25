@@ -1,55 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CdkTableModule } from '@angular/cdk';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MdCardModule,
-  MdIconModule,
-  MdToolbarModule,
-  MdInputModule,
-  MdButtonModule,
-  MdRadioModule,
-  MdProgressSpinnerModule,
-  MdGridListModule,
-  MdTabsModule,
-  MdTableModule
-} from '@angular/material';
-import { ChartsModule } from 'ng2-charts';
-import { ChartModule } from 'angular2-chartjs';
+import { RouterModule, Routes } from '@angular/router';
 
 // Component Imports
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
 
 // Services Imports
 import { UserLoginService } from './user-login.service';
-import { HeaderComponent } from './header/header.component';
+
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: AppComponent
+  },
+  {
+    path: '/login',
+    component: LoginComponent
+  }
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    CdkTableModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    BrowserAnimationsModule,
-    MdCardModule,
-    MdIconModule,
-    MdToolbarModule,
-    MdInputModule,
-    MdButtonModule,
-    MdRadioModule,
-    MdProgressSpinnerModule,
-    MdGridListModule,
-    ChartsModule,
-    MdTabsModule,
-    MdTableModule,
-    ChartModule
+    BrowserAnimationsModule
   ],
   providers: [UserLoginService],
   bootstrap: [AppComponent]

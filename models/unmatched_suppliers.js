@@ -6,7 +6,7 @@ const unmatched_suppliers = db.define('unmatched_suppliers', {
                     type: Sequelize.INTEGER,
                     primaryKey: true
           },
-          Prosepect_Supplier_Name: {
+          Prospect_Supplier_Name: {
                     type: Sequelize.STRING,
                     primaryKey: true
           },

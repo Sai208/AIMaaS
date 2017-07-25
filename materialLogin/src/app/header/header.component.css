@@ -1,7 +1,7 @@
-.search-space {
-          margin-left: 45rem;
+.black {
+  background-color: black;
 }
 
-.search .search::placeholder {
-          color: white
+.gold {
+  color: gold;
 }

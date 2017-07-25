@@ -10,6 +10,10 @@ var users = require('./routes/users');
 var prospectMeta = require('./routes/prosect_meta_data_route');
 var prospectSpend = require('./routes/prospect_spend_route');
 var prospectSpendSummary = require('./routes/prospect_spend_summary_route');
+var prospectSavings = require('./routes/prospect_savings_route');
+var tasks = require('./routes/tasks_route');
+var prospectSavingsAggregate = require('./routes/prospect_savings_aggregate_route');
+var unmatchedSuppliers = require('./routes/unmatched_suppliers_route');
 
 var app = express();
 
@@ -35,6 +39,10 @@ app.use('/users', users);
 app.use('/prospectsMeta', prospectMeta);
 app.use('/prospectSpend', prospectSpend);
 app.use('/prospectSpendSummary', prospectSpendSummary);
+app.use('/prospectSavings', prospectSavings);
+app.use('/tasks', tasks);
+app.use('/prospectSavingsAggregate', prospectSavingsAggregate);
+app.use('/unmatchedSuppliers', unmatchedSuppliers);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
