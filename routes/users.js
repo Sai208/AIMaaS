@@ -6,7 +6,7 @@ const user =  require('../models/user');
 /**
  * Method to check if the current user is authorized and if so what type of user is zhe.
  */
-router.post('/authenticate', (req, res) => {
+router.post('/authenticate/', (req, res) => {
   user.findAll({
     attributes: ['userType', [Sequelize.fn('COUNT', Sequelize.col('userId')), 'EXISTS']],
     where: {

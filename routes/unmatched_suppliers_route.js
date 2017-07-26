@@ -34,4 +34,15 @@ router.get('/smallSupplier', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+  unmatchedSuppliers.findAll({
+      attributes: ['Prospect_Supplier_Name', 'SMP_USD', 'Match_Current_Status'],   
+      where: {
+          Prospect_ID: req.params.id
+      }
+  }).then(suppliers => {
+      res.json(suppliers);
+  });
+});
+
 module.exports = router;

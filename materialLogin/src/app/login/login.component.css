@@ -1,6 +1,7 @@
 .card {
-    border: 0.5px solid black;
-    box-shadow: 10px 5px 6px lightgray;
+    /*border: 0.5px solid black;*/
+    border-radius: 10px;
+    box-shadow: 2px 5px 6px lightgray;
     vertical-align: -webkit-baseline-middle;
     padding: 2rem;
 }

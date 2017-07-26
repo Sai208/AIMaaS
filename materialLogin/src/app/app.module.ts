@@ -16,10 +16,11 @@ import { UserLoginService } from './user-login.service';
 const appRoutes: Routes = [
   {
     path: '',
-    component: AppComponent
+    redirectTo: '/login',
+    pathMatch: 'full'
   },
   {
-    path: '/login',
+    path: 'login',
     component: LoginComponent
   }
 ]
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
